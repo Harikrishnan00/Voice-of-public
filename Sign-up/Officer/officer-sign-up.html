@@ -11,15 +11,14 @@
     <div class="main">
         <div class="sign-up-box">
             <h2>Sign Up</h2>
-            <input type="text" placeholder="Name" data-name>
-            <input type="email" placeholder="Email" data-email>
-            <input type="number" placeholder="Age" data-age>
-            <input type="text" name="" id="" placeholder="Muncipality/Panchayat" data-area>
-            <input type="text" placeholder="Officer id" data-officer-id>
-            <input type="text" placeholder="Phone number" data-phone-number>
-            <input type="text" placeholder="Aadhar Number" data-aadhar-number>
-            <input type="password" autocomplete="new-password" placeholder="Password" data-password>
-            <input type="password" autocomplete="new-password" placeholder="Confrim password">
+            <input type="text" placeholder="Name" data-name  required >
+            <input type="email" placeholder="Email" data-email  required>
+            <input type="number" placeholder="Age" data-age  required>
+            <input type="text" name="" id="" placeholder="Muncipality/Panchayat" data-area  required>
+            <input type="text" placeholder="Officer id" data-officer-id  required>
+            <input type="text" placeholder="Phone number" data-phone-number  required maxlength="10">
+            <input type="text" placeholder="Aadhar Number" data-aadhar-number  required>
+            <input type="password" autocomplete="new-password" placeholder="Password" data-password  required maxlength="12">
             <button data-signup-btn>Sign up</button>
         </div>
     </div>

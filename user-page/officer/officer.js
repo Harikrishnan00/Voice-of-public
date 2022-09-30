@@ -18,8 +18,10 @@ let animationParent=document.querySelector('[data-animation-parent]')
 
 let officerArea
 
+// retrieving user details and problems from db when page loaded
 retrievDataFromDb(id)
 
+// function for retreiving data from db
 function retrievDataFromDb(id){
     db.ref(`users/officer/${id}`).on('value',(snap)=>{
         officerArea=snap.val().area
@@ -33,10 +35,12 @@ function retrievDataFromDb(id){
     
     db.ref(`users/public`).on('value',(snap)=>{
         let data=Object.values(snap.val())
+        templateParent.innerHTML=""
         if(officerArea){
             data.forEach((cred=>{
                 if(cred.area===officerArea&&cred.problem){
                     let transferData=Object.values(cred.problem)
+                    transferData=transferData
                     let userId=cred.id
                     transferData.forEach((resData,i)=>{
                         addingToDoc(resData,userId,i) 
@@ -49,6 +53,7 @@ function retrievDataFromDb(id){
         }
     })
 }
+
 
 function addingToDoc(data,userId,i){
     let template=templateComponent.content.cloneNode(true)
@@ -84,6 +89,7 @@ logOutBtn.addEventListener('click',()=>{
     window.location.href="../../index.html"
 })
 
+// function for updating status
 function updateStatus(userId,index,statusT){
     let data
     db.ref(`users/public/${userId}`).on('value',(snap)=>{
@@ -96,7 +102,7 @@ function updateStatus(userId,index,statusT){
             problem:data
         })
     }
-    location.reload(true)
+    // location.reload(true)
 }
 
 

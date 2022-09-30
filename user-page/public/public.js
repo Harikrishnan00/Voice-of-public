@@ -32,12 +32,12 @@ function addClass(){
     parentDiv.classList.add('active')
 }
 
+// function for dropdown
 dropClick.addEventListener('click',()=>{
     dropParent.classList.toggle('active')
 })
 
-
-
+// Getting current date and time
 let months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 let dateObj =new Date()
 let monthName=months[dateObj.getMonth()]
@@ -47,7 +47,7 @@ let currentTime=dateObj.getTime()
 // fetcing data from db when loading the page
 retrievDataFromDb(id)  
 
-// function for retriwving data from db
+// function for retrieving data from db
 function retrievDataFromDb(id){
     
     db.ref(`users/public/${id}`).on('value',(snap)=>{
@@ -57,8 +57,11 @@ function retrievDataFromDb(id){
     phoneText.innerText=snap.val().phoneNumber
     aadharText.innerText=snap.val().aadharNumber
     panchatText.innerText=snap.val().area
+    // templateParent.innerHTML=""
+    
     if(snap.val().problem){
         let arraySnap=Object.values(snap.val().problem)
+        arraySnap= arraySnap
         arraySnap.forEach(arrayData=>{
 
         let templateData=template.content.cloneNode(true)
@@ -93,6 +96,7 @@ option.forEach((data)=>{
 
 sendBtn.addEventListener('click',addProblemToDb)
 
+// function for retrieve problem details from user and returning the problem
 function  setProblemStructure(){
 
     let problemObj
@@ -127,6 +131,7 @@ function  setProblemStructure(){
 
 }
 
+// function for adding problem to db
 function addProblemToDb(){
 
     let problemDef=setProblemStructure()

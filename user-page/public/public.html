@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi</title>
+    <title>user page</title>
     <link rel="stylesheet" href="./public.css">
 </head>
 <body>
@@ -26,20 +26,23 @@
         </div>
         <div class="right-container" data-parent-div>
             <div class="content-view-container" data-parent-data-box>
-                <template data-template>
-                    <div class="content-container">
-                        <p class="problem-name">problem:<span data-problem-name></span></p>
-                        <p class="problem-definition" data-problem-definition-text><span class="problem-def-span"></span ></p>
-                        <div class="time-and-container">
-                            <p>Status:<span data-status-text></span></p>
-                            <p class="date">Date:<span data-date-text></span></p>
+                <div class="container" data-parent-div>
+                    <template data-template>
+                        <div class="content-container">
+                            <p class="problem-name">problem:<span data-problem-name></span></p>
+                            <p class="problem-definition" data-problem-definition-text><span class="problem-def-span"></span ></p>
+                            <div class="time-and-container">
+                                <p>Status:<span data-status-text></span></p>
+                                <p class="date">Date:<span data-date-text></span></p>
+                            </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
+                </div>
                 <div class="add-button" data-add>
                     <img src="../../images/plus.png" alt="">
                 </div>
             </div>
+
             <div class="content-add-container">
                 <div class="problem-selection-container" >
                     <p>problem:</p>
@@ -59,6 +62,9 @@
                             </div>
                             <div class="option">
                                 <p>pension related</p>
+                            </div>
+                            <div class="option">
+                                <p>others</p>
                             </div>
                         </div>
                     </div>

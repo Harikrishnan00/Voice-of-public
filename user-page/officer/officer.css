@@ -140,6 +140,7 @@
 .drop-click{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .status-dropdown .options{

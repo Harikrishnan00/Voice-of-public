@@ -1,13 +1,18 @@
+// Initializing variables 
 let email=document.querySelector('[data-email]')
 let password=document.querySelector('[data-password]')
 let logInBtn=document.querySelector('[data-login-btn]')
 let signUpBtn=document.querySelector('[data-signup-link]')
 let userId
 
+// Initializing firebase authentication
 const auth = firebase.auth()
 
+// Initializing firebase database
 const db = firebase.database()
 
+// This function is for taking email and passsword from  the user and
+// authenticate that with firebase authenication
 function loginWithEmailAndPass(){
 
     const emailValue=email.value
@@ -32,14 +37,17 @@ function loginWithEmailAndPass(){
     })
 }
 
+// function for redirecting to the main page when 
+// authentication complete
 function redirectToMainPage(path){
     window.location.href=path
 }
 
+// calling loginWithEmailAndPass function when clicking login button
 logInBtn.addEventListener('click',loginWithEmailAndPass)
 
 
-
+// Redirecting to the signup page 
 signUpBtn.addEventListener('click',()=>{
 
     let flag=localStorage.getItem('userFlag')

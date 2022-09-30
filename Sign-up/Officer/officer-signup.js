@@ -1,3 +1,4 @@
+// Initializung variables
 let email=document.querySelector('[data-email]')
 let password=document.querySelector('[data-password]')
 let signInBtn=document.querySelector('[data-signup-btn]')
@@ -9,10 +10,13 @@ let officerId=document.querySelector('[data-officer-id]')
 let phoneNumber=document.querySelector('[data-phone-number]')
 let aadharNumber=document.querySelector('[data-aadhar-number]')
 
+// Initializing firebase authentication
 const auth = firebase.auth()
 
+// Initializing firebase database
 const db = firebase.database()
 
+// function for creating new user in firebase authenticatin 
 function signInWithEmailAndPass(){
 
     const emailValue=email.value
@@ -29,12 +33,15 @@ function signInWithEmailAndPass(){
     })
 }
 
+// function for redirecting to main page when creation of user complete
 function redirectToMainPage(path){
     window.location.href=path
 }
 
+//calling functiion when click on sign up button
 signInBtn.addEventListener('click',signInWithEmailAndPass)
 
+// function for adding user details to db
 function addingDataToDB(id){
     db.ref('/users/officer/'+id).set({
         name:fName.value,
